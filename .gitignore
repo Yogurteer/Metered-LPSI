@@ -1,0 +1,7 @@
+**/target/
+**/build*/
+**/temp/
+**/input/
+*.log
+core
+core.[0-9]*

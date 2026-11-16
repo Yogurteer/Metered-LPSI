@@ -1,0 +1,40 @@
+#ifndef __MAIN_H
+#define __MAIN_H
+
+#include <assert.h>
+#include <getopt.h>
+
+#include <iostream>
+#include <map>
+#include <unordered_set>
+
+#include "client.h"
+#include "pir_parms.h"
+#include "server.h"
+#include "validation.h"
+
+using Element = std::vector<unsigned char>;
+
+std::vector<Element> my_batch_pir_main(const uint64_t num_payloads, const uint64_t payload_size,
+                    const uint64_t num_query, const bool is_batch,
+                    const bool is_compress, std::vector<std::vector<uint64_t>> input_db,
+                    std::vector<uint32_t> query_indices, double& online_time, size_t& com_bytes,
+                    size_t& offline_com_bytes);
+
+std::vector<Element> my_direct_batch_pir_main(
+    const uint64_t num_payloads,
+    const uint64_t payload_size,
+    const uint64_t num_query,
+    const bool is_batch,
+    const bool is_compress,
+    std::vector<std::vector<uint64_t>> input_db,
+    std::vector<uint32_t> query_indices,
+    size_t col_size,
+    double& online_time, size_t& com_bytes,
+    size_t& offline_com_bytes);
+    
+void batch_pir_main(const uint64_t num_payloads, const uint64_t payload_size,
+                    const uint64_t num_query, const bool is_batch,
+                    const bool is_compress);
+
+#endif

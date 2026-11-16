@@ -1,0 +1,15 @@
+[package]
+name = "cx_p256_h2g"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["staticlib"]
+
+[dependencies]
+p256 = { version = "=0.13.2", default-features = false, features = ["arithmetic", "hash2curve", "std"] }
+sha2 = "=0.10.9"
+
+[profile.release]
+lto = true
+codegen-units = 1
