@@ -1,4 +1,4 @@
-# Payable / Metered Labeled PSI — Artifact Release
+# Metered Labeled PSI
 
 This repository contains the source code and build/run instructions for **Metered-LPSI** and the two baseline implementations evaluated in our experiments: **APSI** and **PPSI (MPC4J Payable PSI / PIR)**.
 
